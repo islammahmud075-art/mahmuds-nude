@@ -1,76 +1,461 @@
+
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#10101b">
-  <title>MAHMUD'S NUDE — Viral Entertainment</title>
-  <style>
-    :root{--bg:#0d0d16;--panel:#171725;--muted:#a6a6ba;--text:#f7f7fb;--pink:#ff3d9a;--orange:#ff9d3d;--line:#29293a}
-    *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 85% 0%,#351638 0,transparent 30%),var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
-    header{position:sticky;top:0;z-index:5;background:#10101beF;backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-    .wrap{max-width:1120px;margin:auto;padding:0 18px}.nav{height:70px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .logo{font-weight:900;letter-spacing:.5px;font-size:clamp(17px,4vw,23px)}.logo span{background:linear-gradient(90deg,var(--pink),var(--orange));color:transparent;background-clip:text}
-    .tag{font-size:11px;color:var(--muted);letter-spacing:2px}.hero{padding:52px 0 28px}
-    .eyebrow{color:#ff85c1;font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase}
-    h1{font-size:clamp(34px,7vw,64px);line-height:1.02;margin:12px 0;background:linear-gradient(90deg,#fff,#ff9dcc 60%,#ffc078);color:transparent;background-clip:text}
-    .hero p{max-width:590px;color:var(--muted);line-height:1.7;margin:14px 0 24px}
-    .searchrow{display:flex;gap:10px;max-width:620px}.searchrow input{min-width:0;flex:1;background:#1a1a29;border:1px solid #35354a;color:white;border-radius:13px;padding:14px 16px;font-size:15px;outline:none}
-    .searchrow input:focus{border-color:var(--pink)}button{cursor:pointer;border:0;border-radius:12px;padding:12px 17px;background:linear-gradient(100deg,var(--pink),#ff8b52);color:#fff;font-weight:800}
-    .chips{display:flex;gap:9px;overflow:auto;padding:20px 0 8px;scrollbar-width:none}.chip{white-space:nowrap;background:#191927;border:1px solid var(--line);color:#d6d6e4;border-radius:99px;padding:9px 15px;font-size:13px;cursor:pointer}.chip.active{background:#572342;border-color:#a83b78;color:#fff}
-    .sectionhead{display:flex;justify-content:space-between;align-items:end;margin:24px 0 15px}.sectionhead h2{margin:0;font-size:22px}.sectionhead small{color:var(--muted)}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding-bottom:55px}
-    .card{background:var(--panel);border:1px solid var(--line);border-radius:17px;overflow:hidden;transition:.2s}.card:hover{transform:translateY(-3px);border-color:#8e3c70}
-    .thumb{height:175px;display:grid;place-items:center;position:relative;background:linear-gradient(135deg,#46234c,#1e4660);font-size:54px}
-    .card:nth-child(3n+2) .thumb{background:linear-gradient(135deg,#58302a,#63335a)}.card:nth-child(3n) .thumb{background:linear-gradient(135deg,#174d51,#39306a)}
-    .play{position:absolute;bottom:12px;right:12px;background:#ffffffdf;color:#171725;border-radius:50%;width:36px;height:36px;display:grid;place-items:center;font-size:14px}
-    .pill{position:absolute;top:12px;left:12px;background:#10101bcf;border:1px solid #ffffff30;border-radius:99px;padding:5px 9px;font-size:10px;font-weight:800}
-    .info{padding:14px}.info h3{font-size:16px;margin:0 0 7px}.info p{font-size:12px;color:var(--muted);margin:0}
-    .empty{display:none;color:var(--muted);text-align:center;padding:35px;grid-column:1/-1}
-    footer{border-top:1px solid var(--line);padding:25px 0;color:var(--muted);font-size:12px;text-align:center;line-height:1.8}
-    .note{background:#201b2b;border:1px solid #44304e;border-radius:14px;padding:13px 15px;color:#c9bfd4;font-size:12px;line-height:1.6;margin:0 0 28px}
-    @media(max-width:760px){.grid{grid-template-columns:repeat(2,1fr);gap:11px}.thumb{height:145px}.hero{padding-top:38px}}
-    @media(max-width:470px){.grid{grid-template-columns:1fr}.thumb{height:190px}.nav{height:62px}.tag{display:none}.searchrow button{padding:12px}}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#10101b">
+<title>MAHMUD'S NUDE — Viral Entertainment</title>
+
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#0d0d16;color:#fff;font-family:Arial,sans-serif}
+header{background:#151522;padding:17px;border-bottom:1px solid #333}
+.wrap{max-width:1050px;margin:auto;padding:15px}
+.logo{font-size:23px;font-weight:bold}
+.logo span{color:#ff3d9a}
+button{padding:12px 17px;border:0;border-radius:9px;background:linear-gradient(100deg,#ff3d9a,#ff8b52);color:white;font-weight:bold;cursor:pointer;margin:5px 0}
+input,select{width:100%;padding:13px;margin:7px 0;background:#222233;color:white;border:1px solid #444;border-radius:9px}
+.hero{padding:35px 0}
+.hero h1{font-size:45px;color:#ff83bd;margin:10px 0}
+p{color:#bbb;line-height:1.6}
+.panel{background:#191927;padding:18px;border-radius:14px;margin:20px 0;border:1px solid #333}
+.hidden{display:none!important}
+.chips{display:flex;gap:8px;overflow:auto;padding:15px 0}
+.chip{white-space:nowrap;background:#29293a;color:white;border:1px solid #444;border-radius:25px;padding:10px 15px}
+.chip.active{background:#a52d69}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.card{background:#191927;border-radius:13px;overflow:hidden;border:1px solid #333}
+.media{width:100%;height:190px;object-fit:cover;background:#252538}
+.info{padding:13px}
+.info h3{margin:5px 0 10px}
+.info small{color:#ff9dcc}
+.danger{background:#c42e50}
+.status{color:#ff9dcc;white-space:pre-wrap;font-size:14px}
+.watch{display:block;color:#ff9dcc;padding:15px}
+footer{text-align:center;padding:30px;color:#aaa}
+@media(max-width:650px){.grid{grid-template-columns:repeat(2,1fr)}.media{height:145px}}
+@media(max-width:420px){.grid{grid-template-columns:1fr}.media{height:200px}.hero h1{font-size:36px}}
+</style>
 </head>
+
 <body>
-<header><div class="wrap nav"><div><div class="logo">MAHMUD'S <span>NUDE</span></div><div class="tag">VIRAL ENTERTAINMENT</div></div><button onclick="document.getElementById('content').scrollIntoView({behavior:'smooth'})">Explore</button></div></header>
+
+<header>
+<div class="wrap">
+<div class="logo">MAHMUD'S <span>NUDE</span></div>
+<small>VIRAL ENTERTAINMENT</small>
+</div>
+</header>
+
 <main class="wrap">
-  <section class="hero">
-    <div class="eyebrow">⚡ Your daily dose of viral fun</div>
-    <h1>Watch. Laugh.<br>Share the vibe.</h1>
-    <p>এক জায়গায় খুঁজে নিন মজার ভিডিও, ভাইরাল ক্লিপ ও ট্রেন্ডিং কনটেন্ট। নতুন কিছু দেখুন, ভালো লাগলে বন্ধুদের সঙ্গে শেয়ার করুন!</p>
-    <div class="searchrow"><input id="search" type="search" placeholder="ভিডিও বা ক্যাটাগরি খুঁজুন..." aria-label="Search content"><button onclick="filterCards()">Search</button></div>
-  </section>
-  <div class="chips" id="chips">
-    <button class="chip active" data-cat="সব">সব</button><button class="chip" data-cat="Funny">😂 Funny</button><button class="chip" data-cat="Viral">🔥 Viral</button><button class="chip" data-cat="Music">🎵 Music</button><button class="chip" data-cat="Photos">📸 Photos</button>
-  </div>
-  <section id="content">
-    <div class="sectionhead"><h2>🔥 Trending Now</h2><small id="count">৬টি পোস্ট</small></div>
-    <div class="note">এটি আপনার ওয়েবসাইটের প্রথম ডেমো। এখানে নমুনা কার্ড দেওয়া আছে—নিজের ভিডিও/ছবির লিংক ও তথ্য যোগ করলে সেগুলো আসল কনটেন্ট হিসেবে দেখাবে। অন্যের কনটেন্ট প্রকাশের আগে অনুমতি নিন।</div>
-    <div class="grid" id="grid">
-      <article class="card" data-cat="Funny" data-title="হাসির মজার মুহূর্ত"><div class="thumb">😂<span class="pill">FUNNY</span><span class="play">▶</span></div><div class="info"><h3>হাসির মজার মুহূর্ত</h3><p>Funny • ভিডিও লিংক যোগ করুন</p></div></article>
-      <article class="card" data-cat="Viral" data-title="আজকের ভাইরাল ক্লিপ"><div class="thumb">🔥<span class="pill">TRENDING</span><span class="play">▶</span></div><div class="info"><h3>আজকের ভাইরাল ক্লিপ</h3><p>Viral • ভিডিও লিংক যোগ করুন</p></div></article>
-      <article class="card" data-cat="Music" data-title="মিউজিক ও বিটস"><div class="thumb">🎧<span class="pill">MUSIC</span><span class="play">▶</span></div><div class="info"><h3>মিউজিক ও বিটস</h3><p>Music • ভিডিও লিংক যোগ করুন</p></div></article>
-      <article class="card" data-cat="Photos" data-title="ট্রেন্ডিং ফটো কালেকশন"><div class="thumb">📸<span class="pill">PHOTOS</span><span class="play">▶</span></div><div class="info"><h3>ট্রেন্ডিং ফটো কালেকশন</h3><p>Photos • ছবির লিংক যোগ করুন</p></div></article>
-      <article class="card" data-cat="Funny" data-title="বন্ধুদের সঙ্গে ফান"><div class="thumb">🤣<span class="pill">FUNNY</span><span class="play">▶</span></div><div class="info"><h3>বন্ধুদের সঙ্গে ফান</h3><p>Funny • ভিডিও লিংক যোগ করুন</p></div></article>
-      <article class="card" data-cat="Viral" data-title="এই সপ্তাহের জনপ্রিয়"><div class="thumb">🚀<span class="pill">POPULAR</span><span class="play">▶</span></div><div class="info"><h3>এই সপ্তাহের জনপ্রিয়</h3><p>Viral • ভিডিও লিংক যোগ করুন</p></div></article>
-      <div class="empty" id="empty">কোনো কনটেন্ট পাওয়া যায়নি। অন্য শব্দ দিয়ে খুঁজুন।</div>
-    </div>
-  </section>
+
+<section class="hero">
+<p>⚡ YOUR DAILY DOSE OF VIRAL FUN</p>
+<h1>Watch. Laugh.<br>Share the vibe.</h1>
+<p>এক জায়গায় খুঁজে নিন মজার ভিডিও, ছবি ও ভাইরাল কনটেন্ট।</p>
+<input id="search" placeholder="ভিডিও বা ছবি খুঁজুন...">
+</section>
+
+<!-- ADMIN LOGIN -->
+<section class="panel" id="loginPanel">
+<h2>🔐 Admin Login</h2>
+<p>শুধু Admin এখানে লগইন করতে পারবে।</p>
+<input id="email" type="email" value="islammahmud075@gmail.com" placeholder="Email">
+<input id="password" type="password" placeholder="Password">
+<button onclick="login()">Login</button>
+<p id="loginStatus" class="status"></p>
+</section>
+
+<!-- ADMIN DASHBOARD -->
+<section class="panel hidden" id="adminPanel">
+<h2>👑 Admin Dashboard</h2>
+<p>Admin হিসেবে লগইন করা হয়েছে।</p>
+
+<h3>📤 মোবাইল থেকে ছবি বা ভিডিও আপলোড</h3>
+<input id="mediaFile" type="file" accept="video/*,image/*">
+<input id="fileTitle" placeholder="ভিডিও বা ছবির নাম">
+
+<select id="fileCategory">
+<option>Funny</option>
+<option>Viral</option>
+<option>Music</option>
+<option>Photos</option>
+</select>
+
+<button onclick="uploadFile()">Upload File</button>
+
+<hr style="border-color:#444;margin:22px 0">
+
+<h3>🔗 লিংক দিয়ে পোস্ট</h3>
+<input id="linkTitle" placeholder="পোস্টের নাম">
+<input id="videoLink" type="url" placeholder="ভিডিও বা ছবির লিংক">
+
+<select id="linkCategory">
+<option>Funny</option>
+<option>Viral</option>
+<option>Music</option>
+<option>Photos</option>
+</select>
+
+<button onclick="addLink()">Publish Link</button>
+<p id="adminStatus" class="status"></p>
+<button onclick="logout()">Logout</button>
+</section>
+
+<!-- CATEGORIES -->
+<div class="chips" id="chips">
+<button class="chip active" data-cat="সব">সব</button>
+<button class="chip" data-cat="Funny">😂 Funny</button>
+<button class="chip" data-cat="Viral">🔥 Viral</button>
+<button class="chip" data-cat="Music">🎵 Music</button>
+<button class="chip" data-cat="Photos">📸 Photos</button>
+</div>
+
+<section id="content">
+<h2>🔥 Trending Now</h2>
+<p id="count">লোড হচ্ছে...</p>
+<div class="grid" id="grid"></div>
+<p id="empty" class="status"></p>
+</section>
+
 </main>
-<footer><div class="wrap">© 2026 MAHMUD'S NUDE • Made for entertainment<br>শুধু আইনসম্মত ও অনুমতিপ্রাপ্ত কনটেন্ট প্রকাশ করুন।</div></footer>
+
+<footer>
+© 2026 MAHMUD'S NUDE • Viral Entertainment
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 <script>
-let active='সব';
-const cards=[...document.querySelectorAll('.card')];
-function filterCards(){
- const q=document.getElementById('search').value.trim().toLowerCase();let shown=0;
- cards.forEach(c=>{const okCat=active==='সব'||c.dataset.cat===active;const okText=(c.dataset.title+' '+c.dataset.cat).toLowerCase().includes(q);c.style.display=okCat&&okText?'':'none';if(okCat&&okText)shown++});
- document.getElementById('empty').style.display=shown?'none':'block';
- document.getElementById('count').textContent=shown+'টি পোস্ট';
+const SUPABASE_URL =
+"https://ydmzvqnrnlwcjcqsdmjl.supabase.co";
+
+const SUPABASE_KEY =
+"sb_publishable_ya5z4TisKXdSzxbTd4yq3A_T6iC_E7m";
+
+const ADMIN_UID =
+"6aeae717-a216-4aae-b5c4-eb0577c1f63b";
+
+const BUCKET = "Mahmuda's nude";
+
+const db = window.supabase.createClient(
+SUPABASE_URL,
+SUPABASE_KEY
+);
+
+let isAdmin = false;
+let activeCategory = "সব";
+let allVideos = [];
+
+function msg(id,text){
+document.getElementById(id).textContent=text;
 }
-document.querySelectorAll('.chip').forEach(b=>b.addEventListener('click',()=>{document.querySelector('.chip.active').classList.remove('active');b.classList.add('active');active=b.dataset.cat;filterCards()}));
-document.getElementById('search').addEventListener('input',filterCards);
+
+// ADMIN LOGIN
+async function checkLogin(){
+const {data:{session}} = await db.auth.getSession();
+
+isAdmin = !!(session && session.user.id === ADMIN_UID);
+
+document.getElementById("loginPanel")
+.classList.toggle("hidden",isAdmin);
+
+document.getElementById("adminPanel")
+.classList.toggle("hidden",!isAdmin);
+
+renderVideos();
+}
+
+async function login(){
+const email=document.getElementById("email").value.trim();
+const password=document.getElementById("password").value;
+
+msg("loginStatus","লগইন হচ্ছে...");
+
+const {data,error}=await db.auth.signInWithPassword({
+email:email,
+password:password
+});
+
+if(error){
+msg("loginStatus","Login Error: "+error.message);
+return;
+}
+
+if(data.user.id!==ADMIN_UID){
+await db.auth.signOut();
+msg("loginStatus","এই Account Admin নয়।");
+return;
+}
+
+msg("loginStatus","Admin Login সফল হয়েছে!");
+await checkLogin();
+}
+
+async function logout(){
+await db.auth.signOut();
+await checkLogin();
+msg("loginStatus","Logout হয়েছে।");
+}
+
+// LOAD POSTS
+async function loadVideos(){
+msg("empty","");
+
+const {data,error}=await db
+.from("videos")
+.select("*")
+.order("created_at",{ascending:false});
+
+if(error){
+msg("empty","ভিডিও লোড হয়নি: "+error.message);
+return;
+}
+
+allVideos=data||[];
+renderVideos();
+}
+
+// SHOW POSTS
+function renderVideos(){
+const grid=document.getElementById("grid");
+grid.innerHTML="";
+
+const search=document.getElementById("search")
+.value.toLowerCase();
+
+const filtered=allVideos.filter(v=>{
+return (
+(activeCategory==="সব" || v.category===activeCategory) &&
+(v.title||"").toLowerCase().includes(search)
+);
+});
+
+document.getElementById("count").textContent=
+filtered.length+" টি পোস্ট";
+
+msg("empty",filtered.length?"":"এখনো কোনো পোস্ট নেই।");
+
+filtered.forEach(v=>{
+const card=document.createElement("div");
+card.className="card";
+
+const url=v.video_url||"";
+const isVideo=/\.(mp4|webm|ogg)(\?.*)?$/i.test(url);
+const isImage=/\.(jpg|jpeg|png|gif|webp)(\?.*)?$/i.test(url);
+
+if(isVideo){
+const video=document.createElement("video");
+video.src=url;
+video.className="media";
+video.controls=true;
+video.playsInline=true;
+card.appendChild(video);
+}
+else if(isImage){
+const img=document.createElement("img");
+img.src=url;
+img.className="media";
+img.alt=v.title||"Photo";
+card.appendChild(img);
+}
+else{
+const link=document.createElement("a");
+link.href=url;
+link.target="_blank";
+link.rel="noopener";
+link.className="watch";
+link.textContent="▶ ভিডিও / পোস্ট দেখুন";
+card.appendChild(link);
+}
+
+const info=document.createElement("div");
+info.className="info";
+
+const title=document.createElement("h3");
+title.textContent=v.title||"Untitled";
+
+const category=document.createElement("small");
+category.textContent=v.category||"Viral";
+
+info.append(title,category);
+
+if(isAdmin){
+const del=document.createElement("button");
+del.className="danger";
+del.textContent="Delete";
+del.onclick=()=>deletePost(v);
+info.appendChild(del);
+}
+
+card.appendChild(info);
+grid.appendChild(card);
+});
+}
+
+// UPLOAD PHOTO OR VIDEO
+async function uploadFile(){
+if(!isAdmin)return;
+
+const file=document.getElementById("mediaFile").files[0];
+const title=document.getElementById("fileTitle").value.trim();
+const category=document.getElementById("fileCategory").value;
+
+if(!file||!title){
+msg("adminStatus","ফাইল এবং নাম দিন।");
+return;
+}
+
+msg("adminStatus","আপলোড হচ্ছে...");
+
+const safeName=file.name.replace(/[^a-zA-Z0-9._-]/g,"_");
+const path=Date.now()+"_"+safeName;
+
+const {error:uploadError}=await db.storage
+.from(BUCKET)
+.upload(path,file);
+
+if(uploadError){
+msg("adminStatus","Upload Error: "+uploadError.message);
+return;
+}
+
+const {data:urlData}=db.storage
+.from(BUCKET)
+.getPublicUrl(path);
+
+const {error}=await db.from("videos").insert({
+title:title,
+video_url:urlData.publicUrl,
+category:category
+});
+
+if(error){
+msg("adminStatus","Post Error: "+error.message);
+return;
+}
+
+msg("adminStatus","আপলোড সফল হয়েছে!");
+
+document.getElementById("mediaFile").value="";
+document.getElementById("fileTitle").value="";
+
+await loadVideos();
+}
+
+// ADD LINK POST
+async function addLink(){
+if(!isAdmin)return;
+
+const title=document.getElementById("linkTitle").value.trim();
+const url=document.getElementById("videoLink").value.trim();
+const category=document.getElementById("linkCategory").value;
+
+if(!title||!url){
+msg("adminStatus","নাম এবং লিংক দিন।");
+return;
+}
+
+try{
+new URL(url);
+}catch(e){
+msg("adminStatus","সঠিক লিংক দিন।");
+return;
+}
+
+msg("adminStatus","পোস্ট হচ্ছে...");
+
+const {error}=await db.from("videos").insert({
+title:title,
+video_url:url,
+category:category
+});
+
+if(error){
+msg("adminStatus","Error: "+error.message);
+return;
+}
+
+msg("adminStatus","পোস্ট সফল হয়েছে!");
+
+document.getElementById("linkTitle").value="";
+document.getElementById("videoLink").value="";
+
+await loadVideos();
+}
+
+// DELETE POST
+async function deletePost(v){
+if(!isAdmin)return;
+
+if(!confirm("এই পোস্টটি ডিলিট করবেন?"))return;
+
+const {error}=await db.from("videos")
+.delete()
+.eq("id",v.id);
+
+if(error){
+alert("Delete Error: "+error.message);
+return;
+}
+
+// Uploaded file থাকলে Storage থেকেও মুছবে
+try{
+const marker="/storage/v1/object/public/";
+const pos=v.video_url.indexOf(marker);
+
+if(pos!==-1){
+const rest=decodeURIComponent(
+v.video_url.substring(pos+marker.length)
+);
+const prefix=BUCKET+"/";
+
+if(rest.startsWith(prefix)){
+const path=rest.substring(prefix.length);
+const result=await db.storage.from(BUCKET).remove([path]);
+
+if(result.error){
+console.warn("Storage file not deleted:",result.error.message);
+}
+}
+}
+}catch(e){
+console.warn(e);
+}
+
+alert("পোস্ট ডিলিট হয়েছে।");
+await loadVideos();
+}
+
+// SEARCH
+document.getElementById("search")
+.addEventListener("input",renderVideos);
+
+// CATEGORY BUTTONS
+document.getElementById("chips")
+.addEventListener("click",e=>{
+const btn=e.target.closest("button[data-cat]");
+if(!btn)return;
+
+activeCategory=btn.dataset.cat;
+
+document.querySelectorAll(".chip").forEach(b=>{
+b.classList.toggle("active",b===btn);
+});
+
+renderVideos();
+});
+
+// AUTH CHANGE
+db.auth.onAuthStateChange(()=>{
+setTimeout(checkLogin,0);
+});
+
+// START
+checkLogin();
+loadVideos();
+
 </script>
 </body>
 </html>
